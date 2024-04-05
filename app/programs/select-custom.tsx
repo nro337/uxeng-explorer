@@ -23,7 +23,6 @@ export const CustSelect = ({setLevel}:{setLevel: Dispatch<SetStateAction<string>
         <SelectItem value="PHD">Doctorate</SelectItem>
         <SelectItem value="POSTDOC">Post-doc</SelectItem>
         <SelectItem value="ASSOCIATES">Associates</SelectItem>
-        <SelectItem value="PHD">Doctorate</SelectItem>
         <SelectItem value="CERTIFICATE">Certificate</SelectItem>
         <SelectItem value="MINOR">Minor</SelectItem>
         <SelectItem value="FOCUS">Focus</SelectItem>

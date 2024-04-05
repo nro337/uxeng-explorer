@@ -3,10 +3,10 @@
 import { getPrograms } from "@/utils/supabase/helper";
 import { columns } from "./columns";
 import { DataTable } from "./data-table";
-import { createClient } from '@/utils/supabase/server'
+import { Enums, Tables } from "@/types/supabase";
 
 
-export async function TableWrapper({level}:{level: string}) {
+export async function TableWrapper({level}:{level: Enums<'degree_level'>}) {
 
   const data = await getPrograms(level);
 
@@ -14,9 +14,26 @@ export async function TableWrapper({level}:{level: string}) {
     return <div>Loading...</div>
   }
 
+  let res: any[] = []
+  data.forEach((d) => {
+    res.push({
+      id: d.id,
+      level: d.level,
+      degree_subject_area: d.degree_subject_area,
+      created_at: d.created_at,
+      name: d.name,
+      abbreviation: d.abbreviation,
+      link: d.link,
+      country: d.country,
+      image: d.image,
+      institution: d.institution,
+      degree_type: d.degree_type
+    })
+  })
+
   return (
     <div className="mt-4">
-      <DataTable columns={columns} data={data} />
+      <DataTable columns={columns} data={res} />
     </div>
   );
 }

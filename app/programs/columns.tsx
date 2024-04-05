@@ -1,24 +1,13 @@
 "use client"
 
+import { Tables } from "@/types/supabase"
 import { ColumnDef } from "@tanstack/react-table"
 import Image from "next/image"
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
-export type Program = {
-  id: number
-  created_at: string
-  level?: 'BACHELORS' | 'MASTERS' | 'PHD' | 'ASSOCIATES' | 'CERTIFICATE' | 'POSTDOC' | 'CERTIFICATE' | 'MINOR' | 'FOCUS' | 'OTHER',
-  degree_subject_area: 'DESIGN' | 'ENGINEERING' | 'ARTS' | 'SCIENCE' | 'IT' | 'OTHER',
-  name: string,
-  abbreviation?: string,
-  country?: string,
-  link?: string,
-  image?: string,
-  institution: {name: string}[]
-}
 
-export const columns: ColumnDef<Program>[] = [
+export const columns: ColumnDef<Tables<'programs'>>[] = [
   {
     accessorKey: "image",
     header: "Image",
@@ -35,6 +24,10 @@ export const columns: ColumnDef<Program>[] = [
     accessorKey: 'level',
     cell: info => info.getValue(),
     header: 'Level',
+  },
+  {
+    accessorKey: 'degree_type',
+    header: 'Degree Type',
   },
   {
     accessorKey: 'degree_subject_area',
