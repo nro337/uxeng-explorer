@@ -53,4 +53,8 @@ export const columns: ColumnDef<Tables<'programs'>>[] = [
       return <a href={props.row.original.link} target="_blank" rel="noreferrer" style={{maxWidth: 100, overflowX: "clip"}}>{props.row.original.link}</a>
     },
   },
+  {
+    accessorKey: "notes",
+    header: "Notes",
+  }
 ]

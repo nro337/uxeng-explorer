@@ -27,7 +27,8 @@ export async function TableWrapper({level}:{level: Enums<'degree_level'>}) {
       country: d.country,
       image: d.image,
       institution: d.institution,
-      degree_type: d.degree_type
+      degree_type: d.degree_type,
+      notes: d.notes,
     })
   })
 

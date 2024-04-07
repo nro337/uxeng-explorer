@@ -9,7 +9,7 @@ export const getPrograms = async (level: Enums<'degree_level'>) => {
   const { data } = await supabase
     .from("programs")
     .select(
-      `id, level, degree_type, degree_subject_area, created_at, name, abbreviation, link, country, image, institution (name)`
+      `id, level, degree_type, degree_subject_area, created_at, name, abbreviation, link, country, image, notes, institution (name)`
     )
     .eq("level", level);
 

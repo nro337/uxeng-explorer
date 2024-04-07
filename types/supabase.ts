@@ -16,6 +16,7 @@ export type Database = {
           created_at: string
           id: number
           name: string | null
+          notes: string | null
           state: string | null
           type: Database["public"]["Enums"]["institution_types"] | null
         }
@@ -25,6 +26,7 @@ export type Database = {
           created_at?: string
           id?: number
           name?: string | null
+          notes?: string | null
           state?: string | null
           type?: Database["public"]["Enums"]["institution_types"] | null
         }
@@ -34,6 +36,7 @@ export type Database = {
           created_at?: string
           id?: number
           name?: string | null
+          notes?: string | null
           state?: string | null
           type?: Database["public"]["Enums"]["institution_types"] | null
         }
@@ -45,39 +48,42 @@ export type Database = {
           country: string | null
           created_at: string
           degree_subject_area: Database["public"]["Enums"]["major_types"]
-          degree_type: Database["public"]["Enums"]["degree_type"] | null
+          degree_type: Database["public"]["Enums"]["degree_type"]
           id: number
           image: string | null
           institution: number
           level: Database["public"]["Enums"]["degree_level"] | null
           link: string | null
           name: string
+          notes: string | null
         }
         Insert: {
           abbreviation?: string | null
           country?: string | null
           created_at?: string
           degree_subject_area: Database["public"]["Enums"]["major_types"]
-          degree_type?: Database["public"]["Enums"]["degree_type"] | null
+          degree_type: Database["public"]["Enums"]["degree_type"]
           id?: number
           image?: string | null
           institution: number
           level?: Database["public"]["Enums"]["degree_level"] | null
           link?: string | null
           name?: string
+          notes?: string | null
         }
         Update: {
           abbreviation?: string | null
           country?: string | null
           created_at?: string
           degree_subject_area?: Database["public"]["Enums"]["major_types"]
-          degree_type?: Database["public"]["Enums"]["degree_type"] | null
+          degree_type?: Database["public"]["Enums"]["degree_type"]
           id?: number
           image?: string | null
           institution?: number
           level?: Database["public"]["Enums"]["degree_level"] | null
           link?: string | null
           name?: string
+          notes?: string | null
         }
         Relationships: [
           {
