@@ -2,6 +2,7 @@ import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import { NavigationMenuDemo } from "@/components/Navbar";
+import AuthButton from "@/components/AuthButton";
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -27,8 +28,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="w-full h-16 px-4 bg-gradient-to-br from-slate-500 via-cyan-700 to-blue-950 flex flex-row items-center rounded-b-lg">
+          <div className="w-full h-16 px-4 bg-gradient-to-br from-slate-500 via-cyan-700 to-blue-950 flex flex-row justify-between items-center rounded-b-lg sticky top-0 z-50">
             <NavigationMenuDemo />
+            <AuthButton />
           </div>
           {children}
         </ThemeProvider>
